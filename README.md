@@ -1,11 +1,11 @@
-# Agent Workspace
+# Favorite Skills and Plugins
 
 A curated collection of agent skills and plugins for enhancing Claude Code and other AI agents.
 
 ## Structure
 
 ```
-agent-workspace/
+favorite_skills_and_plugins/
 ├── skills/          # Claude Code skills and agent capabilities
 ├── plugins/         # MCP servers and plugin integrations
 ├── examples/        # Example configurations and usage patterns
@@ -35,8 +35,8 @@ To use a plugin:
 
 1. Clone this repository:
    ```bash
-   git clone <repo-url> agent-workspace
-   cd agent-workspace
+   git clone <repo-url> favorite_skills_and_plugins
+   cd favorite_skills_and_plugins
    ```
 
 2. Browse available skills and plugins
