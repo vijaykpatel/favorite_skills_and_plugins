@@ -17,6 +17,28 @@ favorite_skills_and_plugins/
 
 The `skills/` directory contains reusable agent skills that extend Claude Code's capabilities. Each skill is typically defined in a `SKILL.md` file with instructions, triggers, and workflows.
 
+### What are Skills?
+
+Skills are modular, reusable "task packs" that teach Claude a repeatable workflow. They are folders containing:
+
+- **SKILL.md** - The entrypoint with YAML frontmatter and instructions
+- **Templates** - Optional example files and resources
+- **Scripts** - Optional executable scripts for automation
+- **Domain Knowledge** - Specialized instructions for specific tasks
+
+**Key Features:**
+
+1. **Progressive Loading** - Claude loads skills dynamically when relevant, not upfront
+2. **Context Efficiency** - Skills are loaded in stages as needed, reducing context usage
+3. **Automatic Invocation** - Claude can invoke skills automatically based on context, or you can call them directly with `/skill-name`
+4. **Cross-Platform** - Skills follow the Agent Skills open standard, working across Claude Code, Cursor, and other AI tools
+
+**Types of Skills:**
+
+- **Anthropic Skills** - Created and maintained by Anthropic (e.g., document creation for Excel, Word, PowerPoint, PDF)
+- **Community Skills** - Created by the community for specialized workflows
+- **Custom Skills** - Your own organization-specific skills for domain tasks
+
 ### Available Skills
 
 | Skill Name | Source |
@@ -42,6 +64,7 @@ The `skills/` directory contains reusable agent skills that extend Claude Code's
 | Algorithmic Art | [skills.sh](https://skills.sh/anthropics/skills/algorithmic-art) |
 | Using Git Worktrees | [skills.sh](https://skills.sh/obra/superpowers/using-git-worktrees) |
 | UI-UX Pro Max | [skills.sh](https://skills.sh/nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max) |
+| Ryan Carson PRD Generator | [skills.sh](https://skills.sh/snarktank/ralph/prd) |
 
 ### Installation
 
@@ -90,6 +113,107 @@ For more information, see:
 - [Claude Code MCP Documentation](https://code.claude.com/docs/en/mcp)
 - [Model Context Protocol](https://modelcontextprotocol.io/)
 - [Awesome Claude Code Plugins](https://github.com/ccplugins/awesome-claude-code-plugins)
+
+## Skills vs Plugins: When to Use Each
+
+Understanding when to use skills versus plugins (MCP servers) is key to building effective AI workflows.
+
+### Core Differences
+
+| Aspect | Skills | Plugins (MCP Servers) |
+|--------|--------|----------------------|
+| **Layer** | Prompt/Knowledge Layer | Connectivity/Tooling Layer |
+| **Purpose** | Teach Claude *how* to do something | Give Claude *access* to external systems |
+| **Best For** | Workflows, procedures, domain expertise | Database access, API integrations, tool connectivity |
+| **Loading** | Dynamic, context-driven | Always available when configured |
+| **Format** | Markdown files with instructions | Executable programs with protocol interface |
+
+### When to Use Skills
+
+Use **Skills** when you need to:
+
+- ✅ Define repeatable workflows and procedures
+- ✅ Provide domain-specific expertise (e.g., SEO best practices, design guidelines)
+- ✅ Teach Claude specialized knowledge (e.g., coding patterns, composition techniques)
+- ✅ Create automated, context-driven behaviors
+- ✅ Package instructions that should activate without manual invocation
+
+**Example Use Cases:**
+- React best practices and composition patterns
+- SEO audit workflows
+- Frontend design guidelines
+- Git workflow procedures
+
+### When to Use Plugins (MCP Servers)
+
+Use **Plugins/MCP Servers** when you need to:
+
+- ✅ Connect to external databases (PostgreSQL, SQLite)
+- ✅ Integrate with third-party APIs (GitHub, Slack, Calendar)
+- ✅ Access file systems and cloud storage
+- ✅ Provide real-time data from external sources
+- ✅ Execute operations on external systems
+
+**Example Use Cases:**
+- GitHub repository, PR, and issue management
+- Database queries and operations
+- File system operations
+- Slack messaging and team communication
+
+### Using Skills and Plugins Together
+
+**Skills and plugins are complementary** - they work best when used together:
+
+**The Power Combo:**
+1. **MCP provides the connectivity** - Secure access to your databases, APIs, and external tools
+2. **Skills provide the knowledge** - Instructions on how to use those tools effectively
+
+**Real-World Example:**
+
+```
+MCP Server: GitHub MCP (provides access to repos, PRs, issues)
+    +
+Skill: Code Review Best Practices (teaches Claude how to review code)
+    =
+Automated, expert code reviews with direct GitHub integration
+```
+
+**Another Example:**
+
+```
+MCP Server: PostgreSQL MCP (provides database access)
+    +
+Skill: Data Migration Workflow (teaches safe migration procedures)
+    =
+Automated database migrations with safety checks and rollback plans
+```
+
+### Key Principle
+
+> **If you're explaining how to use a tool or follow procedures → Skill**
+>
+> **If you need Claude to access databases/APIs in the first place → MCP**
+
+Use both together for maximum effectiveness: MCP for connectivity, Skills for procedural knowledge.
+
+## Official Documentation
+
+### Claude Code
+- [Skills Documentation](https://code.claude.com/docs/en/skills)
+- [MCP Documentation](https://code.claude.com/docs/en/mcp)
+- [Plugins Documentation](https://code.claude.com/docs/en/plugins)
+- [Agent Skills Overview](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
+- [Complete Guide to Building Skills](https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf)
+
+### Cursor AI
+- [Agent Skills Documentation](https://cursor.com/docs/context/skills)
+- [Agent Best Practices](https://cursor.com/blog/agent-best-practices)
+- [Cursor Docs](https://cursor.com/docs)
+
+### Community Resources
+- [Anthropic Skills Repository](https://github.com/anthropics/skills)
+- [Awesome Agent Skills](https://github.com/VoltAgent/awesome-agent-skills)
+- [Model Context Protocol](https://modelcontextprotocol.io/)
 
 ## Getting Started
 
