@@ -64,6 +64,7 @@ Skills are modular, reusable "task packs" that teach Claude a repeatable workflo
 | Algorithmic Art | [skills.sh](https://skills.sh/anthropics/skills/algorithmic-art) |
 | Using Git Worktrees | [skills.sh](https://skills.sh/obra/superpowers/using-git-worktrees) |
 | UI-UX Pro Max | [skills.sh](https://skills.sh/nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max) |
+| Ralph (PRD to Tasks) | [skills.sh](https://skills.sh/snarktank/ralph/ralph) |
 | Ryan Carson PRD Generator | [skills.sh](https://skills.sh/snarktank/ralph/prd) |
 
 ### Installation
