@@ -17,6 +17,14 @@ favorite_skills_and_plugins/
 
 The `skills/` directory contains reusable agent skills that extend Claude Code's capabilities. Each skill is typically defined in a `SKILL.md` file with instructions, triggers, and workflows.
 
+### Available Skills
+
+| Skill Name | Source |
+|------------|--------|
+| Vercel React Best Practices | [skills.sh](https://skills.sh/vercel-labs/agent-skills/vercel-react-best-practices) |
+
+### Usage
+
 To use a skill:
 1. Copy the skill directory to your `~/.claude/skills/` folder
 2. Restart Claude Code or reload skills
@@ -25,6 +33,14 @@ To use a skill:
 ## Plugins
 
 The `plugins/` directory contains MCP (Model Context Protocol) servers and other plugin integrations that provide tools and resources to agents.
+
+### Available Plugins
+
+| Plugin Name | Source |
+|-------------|--------|
+| *No plugins yet* | - |
+
+### Usage
 
 To use a plugin:
 1. Follow the installation instructions in the plugin's README
