@@ -21,7 +21,26 @@ The `skills/` directory contains reusable agent skills that extend Claude Code's
 
 | Skill Name | Source |
 |------------|--------|
+| Find Skills | [skills.sh](https://skills.sh/vercel-labs/skills/find-skills) |
+| Web Design Guidelines | [skills.sh](https://skills.sh/vercel-labs/agent-skills/web-design-guidelines) |
+| Frontend Design | [skills.sh](https://skills.sh/anthropics/skills/frontend-design) |
+| Agent Browser | [skills.sh](https://skills.sh/vercel-labs/agent-browser/agent-browser) |
+| Skill Creator | [skills.sh](https://skills.sh/anthropics/skills/skill-creator) |
+| React Composition Patterns | [skills.sh](https://skills.sh/vercel-labs/agent-skills/vercel-composition-patterns) |
 | Vercel React Best Practices | [skills.sh](https://skills.sh/vercel-labs/agent-skills/vercel-react-best-practices) |
+| Next Best Practices | [skills.sh](https://skills.sh/vercel-labs/next-skills/next-best-practices) |
+| AI SDK | [skills.sh](https://skills.sh/vercel/ai/ai-sdk) |
+| SEO Audit | [skills.sh](https://coreyhaines31/marketingskills/seo-audit) |
+| Technical & SEO Website Audit | [skills.sh](https://skills.sh/squirrelscan/skills/audit-website) |
+| Programmatic SEO | [skills.sh](https://skills.sh/coreyhaines31/marketingskills/programmatic-seo) |
+| Performance Optimization | [skills.sh](https://skills.sh/addyosmani/web-quality-skills/performance) |
+| Core Web Vitals | [skills.sh](https://skills.sh/addyosmani/web-quality-skills/core-web-vitals) |
+| PDF Parsing | [skills.sh](https://skills.sh/anthropics/skills/pdf) |
+| Webapp Testing | [skills.sh](https://skills.sh/anthropics/skills/webapp-testing) |
+| MCP Builder | [skills.sh](https://skills.sh/anthropics/skills/mcp-builder) |
+| Theme Factory | [skills.sh](https://skills.sh/anthropics/skills/theme-factory) |
+| Algorithmic Art | [skills.sh](https://skills.sh/anthropics/skills/algorithmic-art) |
+| Using Git Worktrees | [skills.sh](https://skills.sh/obra/superpowers/using-git-worktrees) |
 
 ### Usage
 
