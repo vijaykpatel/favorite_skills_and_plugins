@@ -41,17 +41,40 @@ The `skills/` directory contains reusable agent skills that extend Claude Code's
 | Theme Factory | [skills.sh](https://skills.sh/anthropics/skills/theme-factory) |
 | Algorithmic Art | [skills.sh](https://skills.sh/anthropics/skills/algorithmic-art) |
 | Using Git Worktrees | [skills.sh](https://skills.sh/obra/superpowers/using-git-worktrees) |
+| UI-UX Pro Max | [skills.sh](https://skills.sh/nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max) |
 
-### Usage
+### Installation
 
-To use a skill:
-1. Copy the skill directory to your `~/.claude/skills/` folder
-2. Restart Claude Code or reload skills
-3. Invoke with the appropriate trigger phrase or slash command
+All skills in this repository are **symlinked** to `~/.claude/skills/` for easy management and updates.
+
+To install a skill:
+1. Navigate to the skill's source directory
+2. Create a symlink: `ln -s /path/to/favorite_skills_and_plugins/skills/skill-name ~/.claude/skills/skill-name`
+3. Restart Claude Code or reload skills
+4. Invoke with the appropriate trigger phrase or slash command
+
+**Benefit of symlinks**: Any updates you make to skills in this repository are immediately reflected in Claude Code without needing to copy files.
 
 ## Plugins
 
-The `plugins/` directory contains MCP (Model Context Protocol) servers and other plugin integrations that provide tools and resources to agents.
+The `plugins/` directory will contain MCP (Model Context Protocol) servers that extend Claude Code's capabilities by providing structured access to external systems and data sources.
+
+### What are MCP Servers?
+
+MCP servers are programs that expose specific capabilities to AI applications through the standardized Model Context Protocol. They act as universal adapters enabling Claude Code to interact with tools, databases, APIs, and services.
+
+**MCP servers provide three main building blocks:**
+
+1. **Tools** - Enable Claude to perform actions (e.g., file operations, API calls, database queries)
+2. **Resources** - Expose data from files, APIs, databases, or other sources for context
+3. **Prompts** - Provide reusable, parameterized templates for domain-specific tasks
+
+**Common examples include:**
+- File system servers for document access
+- Database servers (PostgreSQL, SQLite) for data queries
+- GitHub servers for repository, PR, and issue management
+- Slack servers for team communication
+- Calendar servers for scheduling
 
 ### Available Plugins
 
@@ -59,12 +82,14 @@ The `plugins/` directory contains MCP (Model Context Protocol) servers and other
 |-------------|--------|
 | *No plugins yet* | - |
 
-### Usage
+### Installation
 
-To use a plugin:
-1. Follow the installation instructions in the plugin's README
-2. Configure in your `~/.claude/config.json` or MCP settings
-3. Access via the plugin's provided tools
+MCP servers can be configured in `~/.claude/config.json` or installed as part of Claude Code plugins. They can run locally alongside Claude Code or remotely on separate servers.
+
+For more information, see:
+- [Claude Code MCP Documentation](https://code.claude.com/docs/en/mcp)
+- [Model Context Protocol](https://modelcontextprotocol.io/)
+- [Awesome Claude Code Plugins](https://github.com/ccplugins/awesome-claude-code-plugins)
 
 ## Getting Started
 
