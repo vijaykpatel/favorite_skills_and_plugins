@@ -216,6 +216,23 @@ Use both together for maximum effectiveness: MCP for connectivity, Skills for pr
 - [Awesome Agent Skills](https://github.com/VoltAgent/awesome-agent-skills)
 - [Model Context Protocol](https://modelcontextprotocol.io/)
 
+## Where to Find Popular Skills & Plugins
+
+Curated collections of high-quality skills and plugins from leading developers and organizations:
+
+### Skills Collections
+
+- **[Obra's Superpowers](https://github.com/obra/superpowers)** - Jesse Vincent's curated collection of essential agent skills
+- **[Superpowers Lab](https://github.com/obra/superpowers-lab)** - Experimental and advanced agent skills from Obra
+- **[Anthropic Skills](https://github.com/anthropics/skills/tree/main/skills)** - Official skills from Anthropic, creators of Claude
+- **[Vercel Skills](https://github.com/vercel-labs/agent-skills/tree/main/skills)** - Frontend and Next.js focused skills from Vercel Labs
+
+### Plugins & Complete Toolsets
+
+- **[Every Compound Engineering](https://github.com/EveryInc/compound-engineering-plugin/tree/main)** - Comprehensive plugin with subagents, skills, and workflow automation from Every Inc.
+
+These repositories contain battle-tested skills and plugins used in production environments. Browse them for inspiration, or clone and use them directly in your workflow.
+
 ## Getting Started
 
 1. Clone this repository:
