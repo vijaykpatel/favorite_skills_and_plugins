@@ -16,20 +16,20 @@ import argparse
 from pathlib import Path
 from typing import Dict, List, Tuple
 
-def get_git_diff(commit: str = "HEAD", branch: str = "main") -> str:
-    """Get git diff for the specified commit or range."""
+def get_git_diff(commit: str = "HEAD") -> str:
+    """Get git diff numstat for the specified commit."""
     try:
         if commit == "HEAD":
             # Compare working directory with last commit
             result = subprocess.run(
-                ["git", "diff", "HEAD~1..HEAD", "--stat"],
+                ["git", "diff", "HEAD~1..HEAD", "--numstat"],
                 capture_output=True,
                 text=True,
                 check=True
             )
         else:
             result = subprocess.run(
-                ["git", "diff", f"{commit}~1..{commit}", "--stat"],
+                ["git", "diff", f"{commit}~1..{commit}", "--numstat"],
                 capture_output=True,
                 text=True,
                 check=True
@@ -76,21 +76,33 @@ def get_commit_message(commit: str = "HEAD") -> str:
         return ""
 
 def analyze_change_magnitude(diff_stats: str) -> Dict[str, int]:
-    """Analyze the magnitude of changes from diff stats."""
+    """Analyze the magnitude of changes from git diff --numstat output.
+
+    Format: <insertions>\t<deletions>\t<filename>
+    Example: 413\t0\tfile.txt
+    """
     lines = diff_stats.split('\n')
     total_files = 0
     total_insertions = 0
     total_deletions = 0
 
     for line in lines:
-        if '|' in line:
+        if not line.strip():
+            continue
+
+        parts = line.split('\t')
+        if len(parts) >= 3:
             total_files += 1
-            # Extract insertions and deletions
-            parts = line.split('|')[1].strip()
-            if '+' in parts or '-' in parts:
-                # Count + and - characters
-                total_insertions += parts.count('+')
-                total_deletions += parts.count('-')
+            try:
+                # Handle binary files (marked as '-')
+                insertions = 0 if parts[0] == '-' else int(parts[0])
+                deletions = 0 if parts[1] == '-' else int(parts[1])
+
+                total_insertions += insertions
+                total_deletions += deletions
+            except ValueError:
+                # Skip lines that can't be parsed
+                continue
 
     return {
         "files_changed": total_files,
@@ -151,12 +163,11 @@ def assess_impact(magnitude: Dict[str, int], categories: Dict[str, List[str]]) -
 def main():
     parser = argparse.ArgumentParser(description="Analyze git changes for CLAUDE.md updates")
     parser.add_argument("--commit", default="HEAD", help="Commit hash to analyze")
-    parser.add_argument("--branch", default="main", help="Branch to compare against")
 
     args = parser.parse_args()
 
     # Gather change data
-    diff_stats = get_git_diff(args.commit, args.branch)
+    diff_stats = get_git_diff(args.commit)
     changed_files = get_changed_files(args.commit)
     commit_msg = get_commit_message(args.commit)
 

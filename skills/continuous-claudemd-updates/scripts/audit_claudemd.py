@@ -91,15 +91,13 @@ def check_config_consistency(content: str) -> List[Dict[str, str]]:
 
     for config_file, keywords in config_files.items():
         if os.path.exists(config_file):
-            # Check if CLAUDE.md mentions this config
-            for keyword in keywords:
-                if keyword.lower() in content.lower():
-                    # Verify the mention is still accurate
-                    issues.append({
-                        "type": "config_check",
-                        "file": config_file,
-                        "message": f"Review {config_file} references for accuracy"
-                    })
+            # Check if CLAUDE.md mentions this config (any keyword match)
+            if any(keyword.lower() in content.lower() for keyword in keywords):
+                issues.append({
+                    "type": "config_check",
+                    "file": config_file,
+                    "message": f"Review {config_file} references for accuracy"
+                })
 
     return issues
 
@@ -199,8 +197,8 @@ def main():
     else:
         print(generate_report(all_issues))
 
-    # Exit with error code if issues found
-    sys.exit(len(all_issues))
+    # Exit with error code if issues found (1 for any issues, 0 for success)
+    sys.exit(1 if all_issues else 0)
 
 if __name__ == "__main__":
     main()

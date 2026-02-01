@@ -39,7 +39,53 @@ Skills are modular, reusable "task packs" that teach Claude a repeatable workflo
 - **Community Skills** - Created by the community for specialized workflows
 - **Custom Skills** - Your own organization-specific skills for domain tasks
 
-### Available Skills
+### Created Skills
+
+These are custom skills created specifically for this repository, following the [skill-creator](https://skills.sh/anthropics/skills/skill-creator) guidelines.
+
+#### continuous-claudemd-updates
+
+**Purpose**: Automatically maintains CLAUDE.md documentation in sync with codebase changes.
+
+**Features**:
+- Automatic git commit analysis with impact assessment (minor/moderate/major)
+- Conciseness enforcement by moving verbose content to docs/ folder
+- Staleness detection for broken file references and outdated configurations
+- Audit capabilities for comprehensive documentation quality checks
+- Auto-commit functionality with descriptive messages
+
+**Components**:
+- `scripts/analyze_changes.py` - Git diff analysis and impact assessment (181 lines)
+- `scripts/audit_claudemd.py` - CLAUDE.md validation and issue detection (206 lines)
+- `references/guidelines.md` - Content quality standards and best practices
+- `references/examples.md` - Good vs bad documentation examples
+- `assets/note-template.md` - Template for creating detailed docs/ notes
+
+**Triggers**:
+1. A commit has been made and CLAUDE.md needs updating
+2. User explicitly requests CLAUDE.md update or audit
+3. Major refactoring or architectural changes occur
+4. New conventions or patterns are established
+5. Files referenced in CLAUDE.md are deleted/moved
+
+**Usage**:
+```bash
+# Automatic mode (after commit)
+python scripts/analyze_changes.py --commit HEAD
+
+# Manual audit mode
+python scripts/audit_claudemd.py --claudemd CLAUDE.md --report
+```
+
+**Location**: `skills/continuous-claudemd-updates/`
+
+**Status**: ✅ Active - [PR #2](https://github.com/vijaykpatel/favorite_skills_and_plugins/pull/2)
+
+---
+
+### Imported Skills
+
+These skills are imported from the community and external sources.
 
 | Skill Name | Source |
 |------------|--------|
