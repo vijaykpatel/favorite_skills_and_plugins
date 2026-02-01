@@ -63,16 +63,23 @@ def get_all_files() -> List[str]:
         return []
 
 def check_outdated_references(content: str, tracked_files: List[str]) -> List[Dict[str, str]]:
-    """Find references to files that no longer exist."""
+    """Find references to files that no longer exist or aren't git-tracked."""
     issues = []
     file_refs = extract_file_references(content)
 
     for ref in file_refs:
+        # Check if file exists and is git-tracked
         if not check_file_exists(ref):
             issues.append({
                 "type": "missing_file",
                 "file": ref,
                 "message": f"Referenced file does not exist: {ref}"
+            })
+        elif ref not in tracked_files:
+            issues.append({
+                "type": "untracked_file",
+                "file": ref,
+                "message": f"Referenced file exists but is not git-tracked: {ref}"
             })
 
     return issues
