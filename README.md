@@ -9,37 +9,25 @@ favorite_skills_and_plugins/
 ├── skills/          # Claude Code skills and agent capabilities
 ├── plugins/         # MCP servers and plugin integrations
 ├── examples/        # Example configurations and usage patterns
-├── docs/           # Documentation and guides
+├── docs/           # Detailed documentation for created skills
 └── .github/        # GitHub Actions and repository automation
 ```
 
-## Skills
+## Created Skills
 
-The `skills/` directory contains reusable agent skills that extend Claude Code's capabilities. Each skill is typically defined in a `SKILL.md` file with instructions, triggers, and workflows.
+Custom skills built specifically for this repository.
 
-### What are Skills?
+### continuous-claudemd-updates
 
-Skills are modular, reusable "task packs" that teach Claude a repeatable workflow. They are folders containing:
+Automatically maintains CLAUDE.md documentation in sync with codebase changes through commit analysis and periodic audits.
 
-- **SKILL.md** - The entrypoint with YAML frontmatter and instructions
-- **Templates** - Optional example files and resources
-- **Scripts** - Optional executable scripts for automation
-- **Domain Knowledge** - Specialized instructions for specific tasks
+**Key features**: Automatic git commit analysis, conciseness enforcement, staleness detection, audit capabilities, auto-commit functionality.
 
-**Key Features:**
+**[Read full documentation →](docs/continuous-claudemd-updates.md)**
 
-1. **Progressive Loading** - Claude loads skills dynamically when relevant, not upfront
-2. **Context Efficiency** - Skills are loaded in stages as needed, reducing context usage
-3. **Automatic Invocation** - Claude can invoke skills automatically based on context, or you can call them directly with `/skill-name`
-4. **Cross-Platform** - Skills follow the Agent Skills open standard, working across Claude Code, Cursor, and other AI tools
+## Imported Skills
 
-**Types of Skills:**
-
-- **Anthropic Skills** - Created and maintained by Anthropic (e.g., document creation for Excel, Word, PowerPoint, PDF)
-- **Community Skills** - Created by the community for specialized workflows
-- **Custom Skills** - Your own organization-specific skills for domain tasks
-
-### Available Skills
+Curated skills from the community and leading developers.
 
 | Skill Name | Source |
 |------------|--------|
@@ -67,55 +55,36 @@ Skills are modular, reusable "task packs" that teach Claude a repeatable workflo
 | Ralph (PRD to Tasks) | [skills.sh](https://skills.sh/snarktank/ralph/ralph) |
 | Ryan Carson PRD Generator | [skills.sh](https://skills.sh/snarktank/ralph/prd) |
 
-### Installation
+## Plugins & Toolsets
+
+Complete plugin packages and comprehensive toolsets from the community.
+
+### Collections
+
+- **[Obra's Superpowers](https://github.com/obra/superpowers)** - Jesse Vincent's curated collection of essential agent skills
+- **[Superpowers Lab](https://github.com/obra/superpowers-lab)** - Experimental and advanced agent skills
+- **[Anthropic Skills](https://github.com/anthropics/skills/tree/main/skills)** - Official skills from Anthropic
+- **[Vercel Skills](https://github.com/vercel-labs/agent-skills/tree/main/skills)** - Frontend and Next.js focused skills
+- **[Ryan Carson's Skills](https://github.com/snarktank/amp-skills/tree/main)** - Practical agent skills collection
+
+### Complete Plugins
+
+- **[Every Compound Engineering](https://github.com/EveryInc/compound-engineering-plugin/tree/main)** - Comprehensive plugin with subagents and workflow automation
+- **[Ryan Carson Ralph Plugin](https://github.com/snarktank/ralph)** - Convert PRDs into actionable tasks
+- **[Compound Product Scripts](https://github.com/snarktank/compound-product/tree/main)** - Product development workflow automation
+
+## Installation
 
 All skills in this repository are **symlinked** to `~/.claude/skills/` for easy management and updates.
 
 To install a skill:
-1. Navigate to the skill's source directory
-2. Create a symlink: `ln -s /path/to/favorite_skills_and_plugins/skills/skill-name ~/.claude/skills/skill-name`
-3. Restart Claude Code or reload skills
-4. Invoke with the appropriate trigger phrase or slash command
+```bash
+ln -s /path/to/favorite_skills_and_plugins/skills/skill-name ~/.claude/skills/skill-name
+```
 
-**Benefit of symlinks**: Any updates you make to skills in this repository are immediately reflected in Claude Code without needing to copy files.
+**Benefit**: Updates to skills in this repository are immediately reflected in Claude Code without file copying.
 
-## Plugins
-
-The `plugins/` directory will contain MCP (Model Context Protocol) servers that extend Claude Code's capabilities by providing structured access to external systems and data sources.
-
-### What are MCP Servers?
-
-MCP servers are programs that expose specific capabilities to AI applications through the standardized Model Context Protocol. They act as universal adapters enabling Claude Code to interact with tools, databases, APIs, and services.
-
-**MCP servers provide three main building blocks:**
-
-1. **Tools** - Enable Claude to perform actions (e.g., file operations, API calls, database queries)
-2. **Resources** - Expose data from files, APIs, databases, or other sources for context
-3. **Prompts** - Provide reusable, parameterized templates for domain-specific tasks
-
-**Common examples include:**
-- File system servers for document access
-- Database servers (PostgreSQL, SQLite) for data queries
-- GitHub servers for repository, PR, and issue management
-- Slack servers for team communication
-- Calendar servers for scheduling
-
-### Available Plugins
-
-| Plugin Name | Source |
-|-------------|--------|
-| *No plugins yet* | - |
-
-### Installation
-
-MCP servers can be configured in `~/.claude/config.json` or installed as part of Claude Code plugins. They can run locally alongside Claude Code or remotely on separate servers.
-
-For more information, see:
-- [Claude Code MCP Documentation](https://code.claude.com/docs/en/mcp)
-- [Model Context Protocol](https://modelcontextprotocol.io/)
-- [Awesome Claude Code Plugins](https://github.com/ccplugins/awesome-claude-code-plugins)
-
-## Skills vs Plugins: When to Use Each
+## Skills vs Plugins
 
 Understanding when to use skills versus plugins (MCP servers) is key to building effective AI workflows.
 
@@ -126,76 +95,41 @@ Understanding when to use skills versus plugins (MCP servers) is key to building
 | **Layer** | Prompt/Knowledge Layer | Connectivity/Tooling Layer |
 | **Purpose** | Teach Claude *how* to do something | Give Claude *access* to external systems |
 | **Best For** | Workflows, procedures, domain expertise | Database access, API integrations, tool connectivity |
-| **Loading** | Dynamic, context-driven | Always available when configured |
 | **Format** | Markdown files with instructions | Executable programs with protocol interface |
 
 ### When to Use Skills
 
 Use **Skills** when you need to:
-
 - ✅ Define repeatable workflows and procedures
-- ✅ Provide domain-specific expertise (e.g., SEO best practices, design guidelines)
-- ✅ Teach Claude specialized knowledge (e.g., coding patterns, composition techniques)
+- ✅ Provide domain-specific expertise (SEO best practices, design guidelines)
+- ✅ Teach Claude specialized knowledge (coding patterns, composition techniques)
 - ✅ Create automated, context-driven behaviors
-- ✅ Package instructions that should activate without manual invocation
 
-**Example Use Cases:**
-- React best practices and composition patterns
-- SEO audit workflows
-- Frontend design guidelines
-- Git workflow procedures
+**Example**: React best practices, SEO audit workflows, git procedures
 
 ### When to Use Plugins (MCP Servers)
 
-Use **Plugins/MCP Servers** when you need to:
-
+Use **Plugins** when you need to:
 - ✅ Connect to external databases (PostgreSQL, SQLite)
 - ✅ Integrate with third-party APIs (GitHub, Slack, Calendar)
 - ✅ Access file systems and cloud storage
 - ✅ Provide real-time data from external sources
-- ✅ Execute operations on external systems
 
-**Example Use Cases:**
-- GitHub repository, PR, and issue management
-- Database queries and operations
-- File system operations
-- Slack messaging and team communication
+**Example**: GitHub integration, database queries, file system operations
 
-### Using Skills and Plugins Together
+### Using Together
 
-**Skills and plugins are complementary** - they work best when used together:
-
-**The Power Combo:**
-1. **MCP provides the connectivity** - Secure access to your databases, APIs, and external tools
-2. **Skills provide the knowledge** - Instructions on how to use those tools effectively
-
-**Real-World Example:**
+**Skills and plugins are complementary** - they work best together:
 
 ```
-MCP Server: GitHub MCP (provides access to repos, PRs, issues)
+MCP Server: GitHub (provides access to repos, PRs, issues)
     +
-Skill: Code Review Best Practices (teaches Claude how to review code)
+Skill: Code Review Best Practices (teaches how to review code)
     =
 Automated, expert code reviews with direct GitHub integration
 ```
 
-**Another Example:**
-
-```
-MCP Server: PostgreSQL MCP (provides database access)
-    +
-Skill: Data Migration Workflow (teaches safe migration procedures)
-    =
-Automated database migrations with safety checks and rollback plans
-```
-
-### Key Principle
-
-> **If you're explaining how to use a tool or follow procedures → Skill**
->
-> **If you need Claude to access databases/APIs in the first place → MCP**
-
-Use both together for maximum effectiveness: MCP for connectivity, Skills for procedural knowledge.
+> **Key Principle**: If you're explaining how to use a tool → Skill. If you need Claude to access databases/APIs → MCP.
 
 ## Official Documentation
 
@@ -216,46 +150,14 @@ Use both together for maximum effectiveness: MCP for connectivity, Skills for pr
 - [Awesome Agent Skills](https://github.com/VoltAgent/awesome-agent-skills)
 - [Model Context Protocol](https://modelcontextprotocol.io/)
 
-## Where to Find Popular Skills & Plugins
-
-Curated collections of high-quality skills and plugins from leading developers and organizations:
-
-### Skills Collections
-
-- **[Obra's Superpowers](https://github.com/obra/superpowers)** - Jesse Vincent's curated collection of essential agent skills
-- **[Superpowers Lab](https://github.com/obra/superpowers-lab)** - Experimental and advanced agent skills from Obra
-- **[Anthropic Skills](https://github.com/anthropics/skills/tree/main/skills)** - Official skills from Anthropic, creators of Claude
-- **[Vercel Skills](https://github.com/vercel-labs/agent-skills/tree/main/skills)** - Frontend and Next.js focused skills from Vercel Labs
-- **[Ryan Carson's Skills](https://github.com/snarktank/amp-skills/tree/main)** - Ryan Carson's collection of practical agent skills
-
-### Plugins & Complete Toolsets
-
-- **[Every Compound Engineering](https://github.com/EveryInc/compound-engineering-plugin/tree/main)** - Comprehensive plugin with subagents, skills, and workflow automation from Every Inc.
-- **[Ryan Carson Ralph Plugin](https://github.com/snarktank/ralph)** - Plugin for converting PRDs into actionable Ralph-sized tasks
-- **[Compound Product Scripts](https://github.com/snarktank/compound-product/tree/main)** - Product development scripts and workflow automation
-
-These repositories contain battle-tested skills and plugins used in production environments. Browse them for inspiration, or clone and use them directly in your workflow.
-
-## Getting Started
-
-1. Clone this repository:
-   ```bash
-   git clone <repo-url> favorite_skills_and_plugins
-   cd favorite_skills_and_plugins
-   ```
-
-2. Browse available skills and plugins
-3. Follow individual installation instructions
-4. Customize for your workflow
-
 ## Contributing
 
-Add your own skills and plugins:
-1. Create a new directory in `skills/` or `plugins/`
-2. Include a README.md with usage instructions
-3. Document dependencies and configuration
+Add your own skills:
+1. Create a new directory in `skills/`
+2. For created skills, add detailed documentation in `docs/`
+3. Update this README with a brief description
 4. Commit and push changes
 
 ## License
 
-MIT License - See LICENSE file for details
+MIT License - See LICENSE file for details.
