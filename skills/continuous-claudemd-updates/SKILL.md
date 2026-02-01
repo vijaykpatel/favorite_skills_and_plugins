@@ -323,7 +323,7 @@ Analyzes git changes and determines impact on CLAUDE.md.
 
 **Usage**:
 ```bash
-python scripts/analyze_changes.py [--commit <hash>] [--branch <branch>]
+python scripts/analyze_changes.py [--commit <hash>]
 ```
 
 **Output**: JSON with change analysis (magnitude, categories, impact level)

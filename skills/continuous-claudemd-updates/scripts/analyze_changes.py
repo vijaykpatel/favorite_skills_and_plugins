@@ -3,10 +3,9 @@
 Analyzes git changes and determines their impact on CLAUDE.md.
 
 Usage:
-    python analyze_changes.py [--commit <hash>] [--branch <branch>]
+    python analyze_changes.py [--commit <hash>]
 
     --commit: Analyze specific commit (default: HEAD)
-    --branch: Compare against branch (default: main)
 """
 
 import subprocess
