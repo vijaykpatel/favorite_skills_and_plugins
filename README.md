@@ -23,6 +23,11 @@ Automatically maintains CLAUDE.md documentation in sync with codebase changes th
 
 **Key features**: Automatic git commit analysis, conciseness enforcement, staleness detection, audit capabilities, auto-commit functionality.
 
+**Install**:
+```bash
+npx skills add vijaykpatel/favorite_skills_and_plugins@continuous-claudemd-updates
+```
+
 **[Read full documentation →](docs/continuous-claudemd-updates.md)**
 
 ## Imported Skills

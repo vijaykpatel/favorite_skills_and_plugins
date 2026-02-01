@@ -2,6 +2,16 @@
 
 A comprehensive skill for automatically maintaining CLAUDE.md documentation in sync with codebase changes.
 
+## Installation
+
+```bash
+npx skills add vijaykpatel/favorite_skills_and_plugins@continuous-claudemd-updates
+```
+
+This automatically installs to all configured agents (Claude Code, Cursor, etc.) and creates proper symlinks.
+
+[See alternative installation methods →](#installation-1)
+
 ## Purpose
 
 Keeps CLAUDE.md synchronized with codebase changes through automatic analysis after commits and periodic audits. Maintains conciseness by moving detailed content to docs/ folder, removes outdated information, and ensures documentation accuracy.
@@ -213,7 +223,19 @@ Move content to docs/ when:
 
 ## Installation
 
-### From favorite_skills_and_plugins
+### Recommended: Using npx skills (Easiest)
+
+Install directly from GitHub:
+```bash
+npx skills add vijaykpatel/favorite_skills_and_plugins@continuous-claudemd-updates
+```
+
+This automatically:
+- Installs to all configured agents (Claude Code, Cursor, etc.)
+- Creates proper symlinks
+- Handles updates
+
+### Alternative: Manual symlink from favorite_skills_and_plugins
 
 1. Clone the repository:
    ```bash
@@ -227,7 +249,7 @@ Move content to docs/ when:
 
 3. Restart Claude Code or reload skills
 
-### Standalone
+### Alternative: Standalone copy
 
 Copy the skill directory to your Claude skills folder:
 ```bash
