@@ -40,6 +40,7 @@ Curated skills from the community and leading developers.
 | Web Design Guidelines | [skills.sh](https://skills.sh/vercel-labs/agent-skills/web-design-guidelines) |
 | Frontend Design | [skills.sh](https://skills.sh/anthropics/skills/frontend-design) |
 | Agent Browser | [skills.sh](https://skills.sh/vercel-labs/agent-browser/agent-browser) |
+| Before and After Screenshots | [jm.sv](https://www.jm.sv/before-and-after) |
 | Skill Creator | [skills.sh](https://skills.sh/anthropics/skills/skill-creator) |
 | React Composition Patterns | [skills.sh](https://skills.sh/vercel-labs/agent-skills/vercel-composition-patterns) |
 | Vercel React Best Practices | [skills.sh](https://skills.sh/vercel-labs/agent-skills/vercel-react-best-practices) |
@@ -74,6 +75,7 @@ Complete plugin packages and comprehensive toolsets from the community.
 
 ### Complete Plugins
 
+- **[Claude Playgrounds](https://x.com/trq212/status/2017024445244924382?s=12)** - Generate HTML playgrounds to visualize problems with Claude, interact with them, and get output prompts to paste back into Claude Code
 - **[Every Compound Engineering](https://github.com/EveryInc/compound-engineering-plugin/tree/main)** - Comprehensive plugin with subagents and workflow automation
 - **[Ryan Carson Ralph Plugin](https://github.com/snarktank/ralph)** - Convert PRDs into actionable tasks
 - **[Compound Product Scripts](https://github.com/snarktank/compound-product/tree/main)** - Product development workflow automation
