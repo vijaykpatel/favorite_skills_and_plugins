@@ -30,6 +30,17 @@ npx skills add vijaykpatel/favorite_skills_and_plugins@continuous-claudemd-updat
 
 **[Read full documentation →](docs/continuous-claudemd-updates.md)**
 
+### cold-outreach
+
+Write highly effective cold emails and LinkedIn messages to recruiters, hiring managers, founders, and engineers. Based on Ben Lang's proven cold outreach framework (Next Play) - the three-part email structure, five deadly sins to avoid, and concrete examples that got real responses.
+
+**Key features**: Three-part email structure (who/why/care), five deadly sins validation, proven templates by scenario (founders, recruiters, hiring managers), follow-up strategy, LinkedIn variations, "show don't tell" tactics.
+
+**Install**:
+```bash
+npx skills add vijaykpatel/favorite_skills_and_plugins@cold-outreach
+```
+
 ## Imported Skills
 
 Curated skills from the community and leading developers.
