@@ -20,7 +20,7 @@ Cold email works. You can email any company regardless of posted jobs, location 
 Crafting a cold outreach message involves these steps:
 
 1. Gather context (who, what company, what role/goal)
-2. Identify the user's strongest relevant credentials
+2. Identify the user's strongest relevant credentials and match them to the target's needs
 3. Draft the message using the three-part structure
 4. Validate against the five deadly sins
 5. Finalize with subject line and send strategy
@@ -38,8 +38,10 @@ Ask the user for the information needed. Do not ask all at once - start with the
 - What does this company do? What stage are they at?
 - How did you find them? (funding announcement, job board, referral, etc.)
 - Do you have specific accomplishments with numbers you can cite?
+ - Provide links to: company website, job description (if any), and recruiter or hiring manager profile (LinkedIn or similar).
+ - What are they likely hiring for or optimizing right now?
 
-If the user already provided this context, skip directly to drafting.
+If the user already provided this context, skip directly to drafting. If company or recruiter details are missing, prompt for them before drafting.
 
 ### Step 2: Identify Strongest Credentials
 
@@ -50,9 +52,14 @@ Extract and sharpen the user's top 2-3 credentials. Apply these rules:
 - "I work with startups" -> "I built payment systems at Stripe and billing tools at Notion"
 - "Experienced engineer" -> "Built systems handling 300k+ TPS at Amazon"
 
-**Use numbers everywhere possible**: revenue impact, user counts, performance metrics, team size, time saved.
+**Use numbers where they add clarity**: revenue impact, user counts, performance metrics, team size, time saved. Keep them broad and avoid project-specific minutiae.
 
 **Prioritize relevance**: Choose credentials that map directly to what the target company needs, not the most impressive ones in general.
+
+**Match to the target**:
+- Use the company website, job description, and recruiter profile to infer priorities.
+- Select 2-3 background points that align with what they are hiring for or optimizing.
+- If those sources are missing, ask the user to provide them before drafting.
 
 ### Step 3: Draft Using the Three-Part Structure
 
@@ -73,6 +80,8 @@ End with ONE clear ask. See [references/email-examples.md](references/email-exam
   - Bad: "Let me know if you're interested" (vague, no action)
 - **Sound human**. Read it aloud. If it doesn't sound like you actually talk, rewrite it.
 - **Use bullets** for accomplishments. Easier to scan than paragraphs.
+ - **No em dashes**. Use commas or parentheses instead.
+ - **High-level only**. Avoid specific implementation details, or granular execution details. Keep success metrics showing goals achieved. Show competency and confidence without being boring.
 
 #### Output Format
 
@@ -87,7 +96,7 @@ Hi [Name],
 
 [One sentence: why you're reaching out]
 
-[2-3 bullets: why they should care, with specific accomplishments]
+[2-3 bullets: why they should care, with high-level relevant accomplishments]
 
 [One sentence: clear ask]
 
@@ -97,7 +106,7 @@ Best,
 
 Total: 100-150 words. See [references/email-examples.md](references/email-examples.md) for complete examples.
 
-### Step 4: Validate Against the Five Deadly Sins
+### Step 4: Validate Against the Six Deadly Sins
 
 Before presenting the draft, check every message against these five failure modes. If any apply, fix before showing the draft.
 
@@ -105,7 +114,8 @@ Before presenting the draft, check every message against these five failure mode
 2. **Buzzwords** - Remove all corporate language. "Executed strategic initiatives" -> "built a tool that cut processing time by 40%". Remove buzzwords, then remove them again.
 3. **No clear ask** - Missing a specific action you want them to take? Add one.
 4. **Too vague** - Every claim needs specificity. Numbers, company names, concrete examples. No abstractions.
-5. **Dishonest or spammy** - No fake personalization ("I've been a fan for years!" when they just found the company). It's fine to say "I saw you just raised a Series B."
+5. **Too granular** - If it dives into project-level details that are not too in depth for the first 200 word intro, strip it back to higher level impact with the right metrics and actions.
+6. **Dishonest or spammy** - No fake personalization ("I've been a fan for years!" when they just found the company). It's fine to say "I saw you just raised a Series B."
 
 ### Step 5: Subject Line and Send Strategy
 
