@@ -41,6 +41,19 @@ Write highly effective cold emails and LinkedIn messages to recruiters, hiring m
 npx skills add vijaykpatel/favorite_skills_and_plugins@cold-outreach
 ```
 
+### pr-review-handler
+
+Systematically handle PR review feedback by fetching comments, analyzing priorities, implementing fixes, responding to reviewers, and pushing updates.
+
+**Key features**: Automated comment fetching via gh CLI, priority categorization (critical/high/medium/low), structured fix implementation, reviewer response templates, support for bot reviews (Devin AI, Cursor Bugbot).
+
+**Install**:
+```bash
+npx skills add vijaykpatel/favorite_skills_and_plugins@pr-review-handler
+```
+
+**[Read full documentation →](docs/pr-review-handler.md)**
+
 ## Imported Skills
 
 Curated skills from the community and leading developers.
