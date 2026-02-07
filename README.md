@@ -7,6 +7,7 @@ A curated collection of agent skills and plugins for enhancing Claude Code and o
 ```
 favorite_skills_and_plugins/
 ├── skills/          # Claude Code skills and agent capabilities
+├── commands/        # Custom slash commands for Claude Code
 ├── plugins/         # MCP servers and plugin integrations
 ├── examples/        # Example configurations and usage patterns
 ├── docs/           # Detailed documentation for created skills
@@ -53,6 +54,21 @@ npx skills add vijaykpatel/favorite_skills_and_plugins@pr-review-handler
 ```
 
 **[Read full documentation →](docs/pr-review-handler.md)**
+
+## Custom Commands
+
+Reusable slash commands for Claude Code. Copy to `.claude/commands/` in any repo.
+
+| Command | Description |
+|---------|-------------|
+| [deep-plan](commands/deep-plan.md) | Garry Tan's plan mode prompt for detailed interactive code review (architecture, code quality, tests, performance) |
+
+**Install**:
+```bash
+cp commands/deep-plan.md /path/to/your-repo/.claude/commands/
+# Or symlink globally:
+ln -s $(pwd)/commands/deep-plan.md ~/.claude/commands/
+```
 
 ## Imported Skills
 
