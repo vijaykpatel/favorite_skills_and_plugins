@@ -55,6 +55,19 @@ npx skills add vijaykpatel/favorite_skills_and_plugins@pr-review-handler
 
 **[Read full documentation →](docs/pr-review-handler.md)**
 
+### design-taste
+
+Apply principles of good design taste when creating, reviewing, or critiquing any creative or technical work. Based on Paul Graham's "Taste for Makers" essay—taste is not subjective preference but a learnable sense for what makes something genuinely good. Applies across software, writing, visual design, architecture, APIs, and more.
+
+**Key features**: Fourteen design principles (simplicity, timelessness, solving the right problem, suggestiveness, symmetry, redesign, daring, and more), philosophy of craft across disciplines, exemplars from math to visual art.
+
+**Install**:
+```bash
+npx skills add vijaykpatel/favorite_skills_and_plugins@design-taste
+```
+
+**[Read full documentation →](docs/design-taste.md)**
+
 ## Custom Commands
 
 Reusable slash commands for Claude Code. Copy to `.claude/commands/` in any repo.
